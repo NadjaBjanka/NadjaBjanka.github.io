@@ -1,0 +1,9 @@
+fb 	<i class="fab fa-facebook-f"></i>
+ig <i class="fab fa-instagram"></i>
+yt <i class="fab fa-youtube"></i>
+rss <i class="fas fa-rss"></i>
+sm <i class="fas fa-sitemap"></i>
+radno vreme <i class="far fa-clock"></i>
+foun <i class="fas fa-phone"></i>
+lokacija <i class="fas fa-map-marker-alt"></i>
+mejl <i class="fas fa-envelope"></i>
