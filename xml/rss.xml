@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+    <channel>
+        <title>Škola šminke Livija</title>
+        <description>Novi kursevi</description>
+        <link>https://nadjabjanka.github.io/pages/services.html</link>
+    <item>
+        <title>Novi kurs - &#8222;sama svoj šminker&#8221;</title>
+        <description>Uvodimo novi kurs za amatere.</description>
+        <link>https://nadjabjanka.github.io/pages/services.html</link>
+    </item>
+    <item>
+        <title>Novi kurs - Master class</title>
+        <description>Novi kurs za usavršavanje.</description>
+        <link>https://nadjabjanka.github.io/pages/services.html</link>
+    </item>
+    <item>
+        <title>Novi kurs - Kurs za 1 makeup look</title>
+        <description> Novi brzi kurs šminkanja.</description>
+        <link>https://nadjabjanka.github.io/pages/services.html</link>
+    </item>
+    </channel>
+</rss> 

@@ -8,7 +8,7 @@
 	font-family: Monsterrat;
 	src: url(../fonts/Montserrat-Light.ttf)
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	font-family:Monsterrat;
 }
 nav{
@@ -53,6 +53,7 @@ nav ul li a:hover{
 	margin:30px 30px;
 	color: rgb(61, 77, 255);
     font-size: 20px;
+    font-weight: 700;
 }
 header{
 	background-color:rgb(235, 245, 238);
@@ -63,7 +64,8 @@ header{
     width:50%;
     text-align: center;
     border-radius: 25px;
-    background-color: rgba(101, 177, 213)
+    background-color: rgb(235, 245, 238) ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .pt{
     padding-top:30px;
@@ -74,13 +76,12 @@ header{
 .container p{
     font-weight: 600;
     font-size: 26px;
-    color:rgb(235, 245, 238);
+    color: rgb(0, 11, 133);
 }
 footer{
     width:100%;
     position: fixed;
-    left: 0;
-    bottom: 0;
+    bottom: 0px;
     display: flex;
     background-color:rgb(235, 245, 238);
     justify-content: space-around;
@@ -92,16 +93,16 @@ footer{
 }
 .naslov{
     font-size: 42px;
-    color:rgb(235, 245, 238);
+    color: rgb(0, 11, 133);
 }
 .pb{
     font-size:38px;
     font-style: italic;
-    color:rgb(235, 245, 238);
+    color: rgb(0, 11, 133);
 }   
 .podnaslov{
     font-size: 36px;
-    color:rgb(235, 245, 238);
+    color: rgb(0, 11, 133);
 }
 .mb{
     margin-bottom: 25px;
@@ -118,24 +119,24 @@ i{
 	background-image:url(../images/bck-gallery.png);
 	background-size:cover;
 	width:100%;
-    height:900px;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
 }
 .gal {
-font-size: 35px;
-color:rgb(235, 245, 238);
-margin-bottom: 10px;
+    font-size: 35px;
+    color: rgb(0, 11, 133);
+    margin-bottom: 10px;
 }
 .gali {
     font-size: 30px;
-    color:rgb(235, 245, 238);
+    color: rgb(0, 11, 133);
     margin-bottom: 15px;
     }
 .image {
     display: flex;
     height: 600px;
+    padding-bottom: 100px;
 }
 .slike {
     flex: auto;
@@ -161,18 +162,20 @@ margin-bottom: 10px;
     float: right;
 }
 #kontakt {
-	width:60%
+	width:60%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 #form {
     width:40%;
-    margin-left:100px;
-    margin-top: 30px;
+    margin-top: 75px;
 }
 #info{
     width:40%;
-	margin-top:170px;
+	margin-top: 100px;
 }
- form input[type="text"], input[type="password"]{
+form input[type="text"], input[type="password"]{
 	width:100%;
 	margin:10px;
 }
@@ -196,6 +199,7 @@ form input[type="submit"]:hover, input[type="reset"]:hover{
     font-size: 20px;
     color: rgb(61, 77, 255);
     font-weight: 700;
+    margin-left: 25px;
 }
 .bckg5{
 	background-image:url(../images/bckg5.png);
@@ -210,14 +214,16 @@ form input[type="submit"]:hover, input[type="reset"]:hover{
 }
 .livija, .nata, .filip  {
     width:55%;
-    margin:20px auto;
-    font-size: 24px;
-    color:rgb(235, 245, 238);
+    margin:35px auto;
+    font-size: 22px;
+    color: rgb(0, 11, 133);
     text-align: center;
     border-radius: 25px;
-    background-color: rgba(101, 177, 213);
+    background-color: rgb(235, 245, 238) ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-weight: 700;
 }
+
 .bckgal {
 	background-image:url(../images/bck-gallery.png);
 	background-size:cover;
@@ -242,14 +248,63 @@ form input[type="submit"]:hover, input[type="reset"]:hover{
     float: right;
     margin-top: 70px;
     font-size: 24px;
-    color:rgb(235, 245, 238);
+    color: rgb(0, 11, 133);
     text-align: center;
     border-radius: 25px;
-    background-color: rgba(101, 177, 213);
+    background-color: rgb(235, 245, 238) ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-weight: 700;
     margin-right: 200px;
 }
+.svetlapoz {
+    background-color:rgb(141, 197, 224 ); 
+    width:100%; 
+    height: 1100px;
+}
+.new {
+    font-size: 35px;
+    color: rgb(0, 11, 133);
+    margin-bottom: 10px;
+    padding-top:10px;
+}
+#sertifikovani{
+	width:100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+#nesertifikovani{
+	width:100%;
+    display: flex;
+    justify-content: space-evenly;;
+    margin: 20px;
+}
+.naslovljen {
+    font-size: 20px;
+    color: rgb(0, 11, 133);
+    margin-bottom: 10px;
+    margin-top:10px;
+    font-weight: 700;
+}
+.stavka {
+    margin: 10px;
+    color: rgb(0, 11, 133);
+    font-size: 17px;
+}
+.profi {
+    border-radius: 25px;
+    background-color: rgb(235, 245, 238) ;
+    margin:15px;
+    width:20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.boldz {
+    color: rgb(61, 77, 255);
+    font-weight: 700;
+    font-size: 20px;
 
-
-
-
+}
+.profi:hover {
+    transition: transform .30s;
+    transform: scale(1.2);
+}
