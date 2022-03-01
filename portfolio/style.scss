@@ -1,0 +1,875 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Raleway&display=swap");
+$white: #fff5d6;
+$dark-gray: #253943;
+$brown: #4f3d39;
+$dark-blue: #6a899b;
+$light-blue: #909ea6;
+$blue: #afb6de;
+
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin primary-font {
+  font-family: "Raleway", sans-serif;
+}
+@mixin display-font {
+  font-family: "Baloo Da 2", cursive;
+}
+
+@mixin flex-container($flex-direction, $justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+@mixin hr {
+  margin: 10px 0px;
+  border: 1px solid #afb6de;
+  background-color: #afb6de;
+  width: 100px;
+}
+@mixin btn {
+  padding: 10px 30px;
+  background-color: $blue;
+  color: #fff;
+  transition: all 0.2s;
+}
+@mixin position($type, $x, $y) {
+  position: $type;
+  left: $x;
+  top: $y;
+}
+@mixin title {
+  text-align: center;
+  color: $dark-gray;
+  font-size: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style-type: none;
+}
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+// HEADER
+header {
+  position: absolute;
+  width: 100%;
+  .container {
+    @include flex-container(row, space-between, center);
+    #logo {
+      a {
+        img {
+          width: 70px;
+        }
+      }
+    }
+    nav {
+      ul {
+        @include space-between;
+        li {
+          @include primary-font;
+          font-weight: bold;
+          font-size: 17px;
+          margin: 0px 20px;
+          letter-spacing: 1px;
+
+          a {
+            color: #253943;
+            text-decoration: dotted;
+            transition: all 0.2s;
+            &:hover {
+              color: $light-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#cover {
+  background-image: url("../img/background-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  .container {
+    display: flex;
+    justify-content: end;
+    #cover-text {
+      width: 50%;
+      h1 {
+        @include display-font;
+        font-size: 60px;
+        color: $dark-gray;
+      }
+      h2 {
+        @include primary-font;
+        color: $brown;
+      }
+      hr {
+        @include hr;
+      }
+      p {
+        margin-top: 30px;
+
+        a {
+          @include btn;
+          @include primary-font;
+          &:hover {
+            background-color: $dark-blue;
+          }
+        }
+      }
+    }
+  }
+}
+// ABOUT SECTION
+#about {
+  padding: 50px 0px;
+  //   background-color: #cd9a84;
+  .container {
+    @include flex-container(row, space-between, center);
+    #about-text {
+      width: 50%;
+      h2 {
+        @include display-font;
+        font-size: 40px;
+        color: $dark-gray;
+      }
+      hr {
+        @include hr;
+      }
+      p {
+        @include primary-font;
+        margin-top: 20px;
+        line-height: 30px;
+        color: $brown;
+        a {
+          @include btn;
+          &:hover {
+            background-color: $dark-blue;
+          }
+        }
+      }
+    }
+    #about-img {
+      width: 50%;
+      position: relative;
+      @include flex-container(row, right, center);
+      img {
+        width: 60%;
+
+        position: relative;
+      }
+      .border {
+        &:nth-child(1) {
+          @include position(absolute, calc(40% + 20px), 20px);
+          width: 60%;
+          height: 100%;
+          border: 4px solid $dark-gray;
+        }
+        &:nth-child(3) {
+          @include position(absolute, calc(40% - 20px), -20px);
+          width: 60%;
+          z-index: -1;
+          height: 100%;
+          border: 4px solid $blue;
+          background-color: $blue;
+        }
+      }
+    }
+  }
+}
+// SKILLS
+#skills {
+  background-color: $white;
+  padding: 50px 0px;
+  .container {
+    .title {
+      h2 {
+        @include title;
+        @include display-font;
+      }
+      hr {
+        @include hr;
+        margin: 0 auto;
+      }
+    }
+    #skill-wrap {
+      @include space-between;
+      margin-top: 20px;
+      #hard-skills {
+        h3 {
+          @include display-font;
+          font-size: 20px;
+          color: $brown;
+        }
+        width: 50%;
+        .hard-skill-wrap {
+          margin-top: 10px;
+          $i: 2;
+          $list: 70%, 70%, 65%, 55%, 80%;
+          @each $percent in $list {
+            &:nth-child(#{$i}) {
+              .hard-skill-stat-wrap {
+                .hard-skill-stat {
+                  width: $percent;
+                }
+              }
+            }
+            $i: $i + 1;
+          }
+
+          width: 100%;
+          .hard-skill-title {
+            width: 100%;
+            @include space-between;
+            @include primary-font;
+            color: $brown;
+            margin-bottom: 5px;
+          }
+          .hard-skill-stat-wrap {
+            width: 100%;
+            height: 20px;
+
+            position: relative;
+            background-color: #253943;
+            border-radius: 2px;
+            .hard-skill-stat {
+              position: absolute;
+              border-radius: 2px;
+              background-color: $light-blue;
+              height: 100%;
+              width: 90%;
+            }
+          }
+        }
+      }
+      #soft-skills {
+        width: 45%;
+        h3 {
+          @include display-font;
+          font-size: 20px;
+          color: $brown;
+          text-align: right;
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
+        #soft-skills-wrap {
+          width: 100%;
+          flex-wrap: wrap;
+          @include flex-container(row, space-around, stretch);
+          .soft-skill-wrap {
+            width: 30%;
+            padding: 20px;
+            background-color: $blue;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.32);
+            box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.32);
+            img {
+              width: 50px;
+            }
+            h4 {
+              text-transform: uppercase;
+              text-align: center;
+              font-size: 13px;
+              @include primary-font;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// SERVICES
+#services {
+  padding: 50px 0px;
+
+  .container {
+    .title {
+      h2 {
+        @include display-font;
+        @include title;
+      }
+      hr {
+        @include hr;
+        margin: 0 auto;
+      }
+    }
+    #services-wrap {
+      @include space-between;
+      width: 100%;
+      .service {
+        margin-top: 30px;
+        width: 30%;
+        text-align: center;
+        &:hover {
+          img {
+            transform: translateY(-10px);
+          }
+        }
+        img {
+          transition: all 0.2s;
+        }
+        h4 {
+          @include primary-font();
+          margin: 10px 0px;
+          text-transform: uppercase;
+        }
+        p {
+          @include primary-font();
+          font-size: 13px;
+          color: $brown;
+        }
+      }
+    }
+  }
+}
+// PROJECTS
+#projects {
+  background-color: $white;
+  padding: 50px 0px;
+  .container {
+    .title {
+      h2 {
+        @include display-font();
+        @include title;
+      }
+      hr {
+        @include hr;
+        margin: 0 auto;
+      }
+    }
+    #projects-wrap {
+      @include space-between;
+      margin-top: 30px;
+      .project {
+        width: 30%;
+        text-align: center;
+        &:hover {
+          .img-wrap {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+        .img-wrap {
+          border: 1px solid $dark-blue;
+          overflow: hidden;
+          img {
+            width: 100%;
+            transition: all 0.25s;
+            transform: scale(1.05);
+          }
+        }
+
+        h3 {
+          @include primary-font;
+          text-transform: uppercase;
+          margin: 10px 0px;
+          color: $dark-gray;
+        }
+        p {
+          @include primary-font;
+          color: $brown;
+        }
+      }
+    }
+  }
+}
+#contact {
+  padding: 50px 0px;
+  .container {
+    .title {
+      h2 {
+        @include display-font;
+        @include title;
+      }
+      hr {
+        @include hr;
+        margin: 0 auto;
+      }
+    }
+    #contact-wrap {
+      @include space-between;
+      margin-top: 30px;
+      flex-direction: row-reverse;
+      #contact-info {
+        @include flex-container(row, center, center);
+        width: 30%;
+        .info {
+          margin-bottom: 10px;
+          p {
+            font-weight: bold;
+            span {
+              font-weight: lighter;
+            }
+            a {
+              margin: 0px 10px;
+              font-size: 20px;
+              transition: all 0.2s;
+              color: $blue;
+              &:hover {
+                color: $dark-blue;
+              }
+            }
+            @include primary-font;
+          }
+        }
+      }
+      #contact-form {
+        width: 70%;
+        h3 {
+          @include display-font();
+          color: $brown;
+        }
+        form {
+          @include space-between;
+          flex-wrap: wrap;
+          .form-control {
+            width: 100%;
+            margin-top: 10px;
+            @include flex-container(column, start, start);
+            @include primary-font;
+            label {
+              font-weight: bold;
+              font-size: 14px;
+            }
+            input,
+            textarea {
+              width: 100%;
+              @include primary-font();
+              padding: 5px;
+              border: none;
+              border-bottom: 1px solid $dark-blue;
+              margin-top: 10px;
+              background-color: $white;
+              border-radius: 3px;
+            }
+            input {
+              // font-size: 12px;
+              width: 30;
+            }
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+              width: 30%;
+            }
+            &:last-of-type {
+              justify-content: start;
+              flex-direction: row;
+              button[type="submit"] {
+                @include btn;
+                border: none;
+                background-color: #828cc2;
+                @include primary-font();
+                margin-right: 20px;
+                transition: all 0.2s;
+                &:hover {
+                  background-color: #5965a4;
+                  cursor: pointer;
+                }
+              }
+              button[type="reset"] {
+                @include btn;
+                border: none;
+                background-color: #edb170;
+                @include primary-font();
+                transition: all 0.2s;
+                &:hover {
+                  background-color: #c88944;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// FOOTER SECTION
+footer {
+  padding: 20px;
+  background-color: $brown;
+  .container {
+    @include space-between;
+    #copyright {
+      color: $white;
+      @include primary-font();
+    }
+    #footer-social {
+      @include space-between();
+      a {
+        font-size: 18px;
+        margin: 0px 5px;
+        color: $blue;
+      }
+    }
+  }
+}
+// RESPONSIVE DESIGN
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 10px 0px;
+    .container {
+      width: 85%;
+    }
+  }
+  #cover {
+    height: 550px;
+    .container {
+      #cover-text {
+        width: 60%;
+        h1 {
+          font-size: 50px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  #about {
+    .container {
+      width: 85%;
+      #about-text {
+        width: 70%;
+        p {
+          font-size: 15px;
+        }
+      }
+      #about-img {
+        width: 30%;
+        img {
+          width: 80%;
+        }
+        .border {
+          &:nth-child(1),
+          &:nth-child(3) {
+            width: 80%;
+          }
+          &:nth-child(1) {
+            @include position(absolute, calc(20% + 20px), 20px);
+          }
+          &:nth-child(3) {
+            @include position(absolute, calc(20% - 20px), -20px);
+          }
+        }
+      }
+    }
+  }
+  #skills {
+    .container {
+      width: 85%;
+      #skill-wrap {
+        #hard-skills {
+          width: 45%;
+        }
+        #soft-skills {
+          width: 50%;
+          #soft-skills-wrap {
+            .soft-skill-wrap {
+              padding: 20px 10px;
+              h4 {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #services {
+    .container {
+      width: 85%;
+    }
+  }
+  #projects {
+    .container {
+      width: 85%;
+      #projects-wrap {
+        .project {
+          h3 {
+            font-size: 16px;
+          }
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  #contact {
+    .container {
+      width: 85%;
+      #contact-wrap {
+        #contact-info {
+          width: 35%;
+        }
+        #contact-form {
+          width: 65%;
+          form {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    .container {
+      flex-direction: column;
+
+      nav {
+        margin-top: 10px;
+      }
+    }
+  }
+  #cover {
+    background-position: -30px bottom;
+    .container {
+      width: 85%;
+      #cover-text {
+        margin-top: 80px;
+      }
+    }
+  }
+  #about {
+    .container {
+      #about-text {
+        width: 60%;
+      }
+      #about-img {
+        width: 40%;
+        margin-top: 50px;
+      }
+    }
+  }
+  #skills {
+    .container {
+      #skill-wrap {
+        #hard-skills {
+          h3 {
+            margin-bottom: 40px;
+          }
+          .hard-skill-wrap {
+            margin-bottom: 30px;
+          }
+        }
+        #soft-skills {
+          width: 45%;
+          #soft-skills-wrap {
+            .soft-skill-wrap {
+              width: 45%;
+            }
+          }
+        }
+      }
+    }
+  }
+  #services {
+    .container {
+      width: 90%;
+      #services-wrap {
+        .service {
+          h4 {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  #projects {
+    .container {
+      width: 90%;
+    }
+  }
+  #contact {
+    .container {
+      #contact-wrap {
+        flex-direction: column;
+        #contact-info {
+          width: 100%;
+          .info {
+            text-align: center;
+          }
+        }
+        #contact-form {
+          width: 100%;
+          form {
+            .form-control:last-of-type {
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 426px) {
+  header {
+    background-color: #cd9a84a9;
+    border-bottom: 1px solid #000;
+    .container {
+      nav {
+        width: 100%;
+        ul {
+          width: 100%;
+          flex-direction: column;
+          li {
+            width: 100%;
+            margin: 5px 0px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  #cover {
+    background-position: left center;
+    height: 100vh;
+    background-size: cover;
+    background-image: url("../img/background-2.png");
+    .container {
+      #cover-text {
+        margin-top: 200px;
+
+        width: 100%;
+        h1 {
+          //   background-color: $white;
+          font-size: 40px;
+        }
+        h2 {
+          font-size: 17px;
+          //   background-color: $white;
+        }
+      }
+    }
+  }
+  #about {
+    .container {
+      flex-direction: column;
+      #about-text {
+        width: 100%;
+      }
+      #about-img {
+        width: 80%;
+        img {
+          margin-right: 10%;
+        }
+        .border {
+          margin-right: 10%;
+          &:nth-child(1) {
+            @include position(absolute, calc(10% - 10px), -10px);
+          }
+          &:nth-child(3) {
+            @include position(absolute, calc(10% + 10px), 10px);
+          }
+        }
+      }
+    }
+  }
+  #skills {
+    .container {
+      #skill-wrap {
+        flex-direction: column;
+        #hard-skills {
+          width: 100%;
+          h3 {
+            margin: 0;
+          }
+          .hard-skill-wrap {
+            margin: 10px 0px;
+          }
+        }
+        #soft-skills {
+          margin-top: 20px;
+          width: 100%;
+          h3 {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  #services {
+    .container {
+      width: 75%;
+      #services-wrap {
+        flex-direction: column;
+        .service {
+          width: 100%;
+        }
+      }
+    }
+  }
+  #projects {
+    .container {
+      width: 85%;
+      #projects-wrap {
+        flex-direction: column;
+        .project {
+          width: 100%;
+          margin: 10px 0px;
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  #contact {
+    .container {
+      #contact-wrap {
+        #contact-form {
+          form {
+            .form-control {
+              &:nth-child(1),
+              &:nth-child(2),
+              &:nth-child(3) {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    .container {
+      width: 85%;
+      flex-direction: column-reverse;
+      text-align: center;
+      #copyright {
+        margin-top: 10px;
+        p {
+          font-size: 12px;
+        }
+      }
+      #footer-social {
+        margin: 0 auto;
+      }
+    }
+  }
+}
